@@ -4,10 +4,10 @@ using Grpc.Core;
 
 namespace DataBaseService.Services
 {
-      public class GameService(UserRepository userRepository) : DataBaseService.
+      public class GameService(UserRepository userRepository) : DataBaseService.GameService.GameServiceBase
       {
       
-            public Task<UserReply> SendUserInfo(UserRequest request, ServerCallContext context) 
+            public override Task<UserReply> SendUserInfo(UserRequest request, ServerCallContext context) 
             {
                   UnityEngine.Debug.Log(request.Login);
                   UnityEngine.Debug.Log(request.Password);
