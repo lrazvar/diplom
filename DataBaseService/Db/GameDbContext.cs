@@ -6,11 +6,11 @@ using Microsoft.EntityFrameworkCore;
 public sealed class GameDbContext: DbContext
 {
     public DbSet<UserData> UserData { get; set; }
-
+    public GameDbContext() { }
 
     public GameDbContext(DbContextOptions<GameDbContext> options) : base(options)
     {
-        Database.EnsureCreated();
+        //Database.EnsureCreated();
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -19,4 +19,5 @@ public sealed class GameDbContext: DbContext
             .HasIndex(u => u.Login)
             .IsUnique();
     }
+    
 }

@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DataBaseService.Db.Repository;
 
-public class UserRepository(GameDbContext gameDbContext) : DbContext
+public class UserRepository(GameDbContext gameDbContext)
 {
     public void SaveToDb(UserData userData)
     {

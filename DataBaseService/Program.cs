@@ -11,10 +11,15 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
+// var configuration = new ConfigurationBuilder()
+//     .AddJsonFile("C:\\Users\\lrazv\\unityProjects\\diplomchik\\DataBaseService\\appsettings.json", optional: false, reloadOnChange: true)
+//     .Build();
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddGrpc();
 builder.Services.AddDbContext<GameDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("PostgresConnection")));
+// builder.Services.AddDbContext<GameDbContext>(options =>
+//     options.UseNpgsql(configuration.GetConnectionString("PostgresConnection")));
 builder.Services.AddScoped<UserRepository>();
 
 builder.Services.AddControllers();
@@ -23,11 +28,11 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+
+
+app.UseSwagger();
+app.UseSwaggerUI();
+
 
 app.MapControllers();
 app.MapGrpcService<GameService>();
