@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 6dd7dc0e414b9284c9f226d9133a14ae
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Boxtoon
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: c9ec2d248e838fa4988b0a245289d066, type: 3}
+  - {fileID: 12800000, guid: 6edc7324943e46f4b8622717549ecb63, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
